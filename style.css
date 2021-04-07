@@ -16,7 +16,17 @@ main {
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
+    text-align: center;
 }
 .card li {
     list-style: none;
+}
+
+.card img {
+    height: 50px;
+    width: 90px;
+}
+
+.shows {
+    background-color: rgb(65, 12, 12);
 }
