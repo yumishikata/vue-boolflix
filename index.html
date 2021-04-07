@@ -19,13 +19,17 @@
         <main>
                 <ul class="card" v-for="film in films">
                     <li>
+                        <img v-if="film.poster_path != null":src='"https://image.tmdb.org/t/p/w185" +film.poster_path'alt="">
+                        <img class="not_avaiable" v-else src="https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png" alt="">
+                    </li>
+                    <li>
                         <b>{{film.title}}</b>
                     </li>
                     <li>
                         {{film.original_title}}
                     </li>
                     <li>
-                        <img :src='"https://www.unknown.nu/flags/images/" + film.original_language + "-100"' alt="">
+                        <img class="flags" :src='"https://www.unknown.nu/flags/images/" + film.original_language + "-100"' alt="">
                     </li>
                     <li>
                         <div>
@@ -35,6 +39,10 @@
                 </ul>
 
                 <ul class="card shows" v-for="tv in shows">
+                    <li>
+                        <img v-if="tv.poster_path != null" :src='"https://image.tmdb.org/t/p/w185" +tv.poster_path'alt="">
+                        <img class="not_avaiable" v-else src="https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png" alt="">
+                    </li>
                     <li>
                         <b>{{tv.name}}</b>
                     </li>

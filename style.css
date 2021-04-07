@@ -9,7 +9,7 @@ main {
     background-color: grey;
     color: white;
     width: 220px;
-    height: 200px;
+    height: 500px;
     margin-right: 20px;
     margin-bottom: 20px;
     display: flex;
@@ -22,11 +22,16 @@ main {
     list-style: none;
 }
 
-.card img {
+.card .flags {
     height: 50px;
     width: 90px;
 }
 
 .shows {
     background-color: rgb(65, 12, 12);
+}
+
+.not_avaiable {
+    height: 278px;
+    width: 185px;
 }
