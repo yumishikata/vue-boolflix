@@ -12,52 +12,36 @@
 </head>
 <body>
     <div id="root">
-        <nav>
-            <input type="text" placeholder="Cerca" v-model="cerca" @keypress.enter="search">
-            <input type="submit" @click="search">
-        </nav>
+        <header>
+            <img src="img/boolflix.png" alt="">
+            <input type="text" placeholder="Cerca" v-model="cerca" @keyUp="search">
+        </header>
         <main>
-                <ul class="card" v-for="film in films">
-                    <li>
-                        <img v-if="film.poster_path != null":src='"https://image.tmdb.org/t/p/w185" +film.poster_path'alt="">
-                        <img class="not_avaiable" v-else src="https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png" alt="">
-                    </li>
-                    <li>
-                        <b>{{film.title}}</b>
-                    </li>
-                    <li>
-                        {{film.original_title}}
-                    </li>
-                    <li>
-                        <img class="flags" :src='"https://www.unknown.nu/flags/images/" + film.original_language + "-100"' alt="">
-                    </li>
-                    <li>
-                        <div>
-                            <i :class="[index < film.vote_average ? 'fas fa-star' : 'far fa-star']" v-for="(star,index) in 5" style="color: rgb(218, 197, 79)"></i>
-                        </div>
-                    </li>
-                </ul>
-
-                <ul class="card shows" v-for="tv in shows">
-                    <li>
-                        <img v-if="tv.poster_path != null" :src='"https://image.tmdb.org/t/p/w185" +tv.poster_path'alt="">
-                        <img class="not_avaiable" v-else src="https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png" alt="">
-                    </li>
-                    <li>
-                        <b>{{tv.name}}</b>
-                    </li>
-                    <li>
-                        {{tv.original_name}}
-                    </li>
-                    <li>
-                        <img :src='"https://www.unknown.nu/flags/images/" + tv.original_language + "-100"' alt="">
-                    </li>
-                    <li>
-                        <div>
-                            <i :class="[index < tv.vote_average ? 'fas fa-star' : 'far fa-star']" v-for="(star,index) in 5" style="color: rgb(218, 197, 79)"></i>
-                        </div>
-                    </li>
-                </ul>
+        <div v-for="film in films">
+            <div class="poster-div">
+                <img v-if="film.poster_path != null":src='"https://image.tmdb.org/t/p/w342" +film.poster_path'alt="">
+                <img class="not_avaiable" v-else src="https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png" alt="">
+                    <ul class="card">
+                        <li>
+                            <b>{{film.title || film.name}}</b>
+                        </li>
+                        <li>
+                            {{film.original_title || film.original_name}}
+                        </li>
+                        <li>
+                            <img class="flags" :src='"https://www.unknown.nu/flags/images/" + film.original_language + "-100"' alt="">
+                        </li>
+                        <li>
+                            {{film.overview}}
+                        </li>
+                        <li>
+                            <div>
+                                <i :class="[index < film.vote_average ? 'fas fa-star' : 'far fa-star']" v-for="(star,index) in 5" style="color: rgb(218, 197, 79)"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </main>
         <script src="main.js"></script>
     </div>

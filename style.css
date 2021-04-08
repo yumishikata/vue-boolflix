@@ -1,24 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh; 
+    width: 100%;
+    overflow: scroll;
+    background-color: rgb(31, 30, 30);
+}
+header {
+    padding: 10px 40px;
+    position: fixed;
+    height: 10%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99999;
+}
+header img {
+    height: 50px;
+
+}
+header input {
+    height: 30px;
+    border: 1px solid white;
+    background-color: black;
+    color: grey;
+    padding-left: 5px;
+}
 main {
+    padding: 12vh 5px;
+    height: 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+}
+
+.poster-div{
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .card {
+    visibility: hidden;
     padding-inline-start: 0;
-    background-color: grey;
+    background-color: black;
     color: white;
-    width: 220px;
-    height: 500px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
     text-align: center;
 }
-.card li {
+li {
     list-style: none;
 }
 
@@ -27,11 +70,11 @@ main {
     width: 90px;
 }
 
-.shows {
-    background-color: rgb(65, 12, 12);
+.not_avaiable {
+    height: 505px;
+    width: 342px;
 }
 
-.not_avaiable {
-    height: 278px;
-    width: 185px;
+.poster-div:hover .card {
+    visibility: visible;
 }
